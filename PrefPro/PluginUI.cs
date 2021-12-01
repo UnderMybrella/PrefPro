@@ -20,6 +20,8 @@ namespace PrefPro
         private const string FemaleDesc = "Female";
         private const string RandomDesc = "Random gender";
         private const string ModelDesc = "Model gender";
+        private const string TheyThemDesc = "A Theymer";
+        private const string DumpsterDesc = "The Raw Payloads";
 
         private string _tmpFirstName = "";
         private string _tmpLastName = "";
@@ -183,6 +185,10 @@ namespace PrefPro
                         _configuration.Gender = PrefPro.GenderSetting.Random;
                     if (ImGui.Selectable(ModelDesc))
                         _configuration.Gender = PrefPro.GenderSetting.Model;
+                    if (ImGui.Selectable(TheyThemDesc))
+                        _configuration.Gender = PrefPro.GenderSetting.TheyThem;
+                    if (ImGui.Selectable(DumpsterDesc))
+                        _configuration.Gender = PrefPro.GenderSetting.Dumpster;
                     _configuration.Save();
                     ImGui.EndCombo();
                 }
@@ -232,6 +238,8 @@ namespace PrefPro
                 PrefPro.GenderSetting.Female => FemaleDesc,
                 PrefPro.GenderSetting.Random => RandomDesc,
                 PrefPro.GenderSetting.Model => ModelDesc,
+                PrefPro.GenderSetting.TheyThem => TheyThemDesc,
+                PrefPro.GenderSetting.Dumpster => DumpsterDesc,
                 _ => ""
             };
         }
